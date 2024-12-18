@@ -24,7 +24,7 @@ The architecture described in this note is a “first thought” at one way that
 
 In simple terms, the architecture planned here uses GitHub sub-modules and workflows in order to provide the user with a system for making the various moving parts of the context picture make sense. 
 
-The architecture here moves from specific context doors to the master context doors, just because of the way that GitHub submodules work. A repository can be set up to hold context for a specific project feeding into a specific vector store. And then sub-modules are used to gather all these smaller and subject specific pieces of context into the one master store. 
+The architecture here moves from specific context repos to the master context repo. It does so to because of how GitHub submodules work. A repository can be set up to hold context for a specific project feeding into a specific vector store. And then sub-modules are used to gather all these smaller and subject specific pieces of context into the one master store. 
 
 Vector store pipelines can be set up laterally at all the levels of this architecture. It's assumed that they exist between the specific subject repositories. And once those are gathered into the main context store, a single pipeline can be used to copy all that data into one master context vector store. This might mean that the user has duplicate or replicate context data stored in different vector stores. But given the very affordable price at which storage in these technologies is currently priced and the very lightweight nature of textual file storage this doesn't seem like a duplication worth chasing down. 
 
